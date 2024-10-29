@@ -75,7 +75,7 @@ const StatCounter = ({ end, duration = 2000 }: StatCounterProps) => {
   return <span ref={counterRef}>{count.toLocaleString()}</span>;
 };
 
-export default function SuperiorAutoAndCycleSales() {
+export default function SuperiorAutoAndCycle() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   const aboutRef = useRef<HTMLElement>(null)
@@ -837,7 +837,7 @@ export default function SuperiorAutoAndCycleSales() {
             </div>
             
             <p className="text-lg text-gray-600 leading-relaxed">
-              Since 2010, Superior Auto and Cycle Sales LLC has been Massachusetts' premier destination for quality vehicles and powersports equipment. Our commitment to exceptional service and customer satisfaction has made us a trusted name in the automotive and powersports community.
+              Since 2010, Superior Auto and Cycle Sales LLC has been Massachusetts&apos; premier destination for quality vehicles and powersports equipment. Our commitment to exceptional service and customer satisfaction has made us a trusted name in the automotive and powersports community.
             </p>
             
             <div className="grid grid-cols-2 gap-6">
