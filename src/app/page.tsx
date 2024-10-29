@@ -24,6 +24,7 @@ const StatCounter = ({ end, duration = 2000 }: StatCounterProps) => {
   const counterRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    const currentRef = counterRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -33,13 +34,13 @@ const StatCounter = ({ end, duration = 2000 }: StatCounterProps) => {
       { threshold: 0.1 }
     );
 
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -542,8 +543,8 @@ export default function SuperiorAutoAndCycleSales() {
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
-            backgroundSize: "40px 40px"
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px'
           }}></div>
         </div>
       </div>
@@ -641,7 +642,7 @@ export default function SuperiorAutoAndCycleSales() {
           <h2 className="text-4xl font-bold mb-4">Our Happy Customers</h2>
           <div className="h-1 w-24 bg-blue-500 mx-auto rounded mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it - hear what our valued customers have to say about their experience with us.
+            Don&apos;t just take our word for it - hear what our valued customers have to say about their experience with us.
           </p>
         </div>
 
