@@ -308,6 +308,17 @@ export default function SuperiorAutoAndCycleSales() {
           </div>
           <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
             <p>&copy; 2024 Superior Auto and Cycle Sales LLC. All rights reserved.</p>
+            <p className="mt-2 text-sm">
+              Developed by{" "}
+              <a 
+                href="https://facebook.com/yobb03" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300"
+              >
+                Yobb Oramlis
+              </a>
+            </p>
           </div>
         </div>
       </footer>
