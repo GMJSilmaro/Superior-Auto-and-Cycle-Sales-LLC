@@ -4,14 +4,14 @@ import { useState, useEffect, useRef } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { ChevronDown, Phone, Mail, MapPin } from 'lucide-react'
+import { Phone, Mail, MapPin } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import Image from 'next/image'
 
 export default function SuperiorAutoAndCycleSales() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -101,10 +101,12 @@ export default function SuperiorAutoAndCycleSales() {
       <main>
         <section id="home" className="relative h-[70vh] flex items-center justify-center overflow-hidden">
           <div className="absolute w-full h-full">
-            <img 
+            <Image 
               src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80"
               alt="Hero background"
-              className="w-full h-full object-cover brightness-50"
+              fill
+              className="object-cover brightness-50"
+              priority
             />
           </div>
           <div className="relative z-10 text-center text-white max-w-3xl mx-auto px-4">
@@ -145,12 +147,15 @@ export default function SuperiorAutoAndCycleSales() {
                 <SwiperSlide key={index}>
                   <Card className="group overflow-hidden h-full">
                     <div className="relative overflow-hidden">
-                      <img 
-                        src={category.image} 
-                        alt={category.title} 
-                        className="w-full h-48 object-cover transform transition-transform duration-300 group-hover:scale-110" 
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="relative overflow-hidden h-48">
+                        <Image 
+                          src={category.image} 
+                          alt={category.title} 
+                          fill
+                          className="object-cover transform transition-transform duration-300 group-hover:scale-110" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
                     </div>
                     <CardHeader>
                       <CardTitle>{category.title}</CardTitle>
@@ -207,22 +212,31 @@ export default function SuperiorAutoAndCycleSales() {
                 </Button>
               </div>
               <div className="space-y-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=500&q=80" 
-                  alt="Showroom" 
-                  className="rounded-lg shadow-lg w-full"
-                />
+                <div className="relative w-full h-[300px]">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=500&q=80" 
+                    alt="Showroom" 
+                    fill
+                    className="rounded-lg shadow-lg object-cover" 
+                  />
+                </div>
                 <div className="grid grid-cols-2 gap-4">
-                  <img 
-                    src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=500&q=80" 
-                    alt="ATV" 
-                    className="rounded-lg shadow-lg"
-                  />
-                  <img 
-                    src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=500&q=80" 
-                    alt="Motorcycle" 
-                    className="rounded-lg shadow-lg"
-                  />
+                  <div className="relative h-[200px]">
+                    <Image 
+                      src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=500&q=80" 
+                      alt="ATV" 
+                      fill
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
+                  <div className="relative h-[200px]">
+                    <Image 
+                      src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=500&q=80" 
+                      alt="Motorcycle" 
+                      fill
+                      className="rounded-lg shadow-lg object-cover"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
